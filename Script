@@ -1,3 +1,154 @@
+echo " "
+echo " _   __                          _                     _       _               "
+echo "| | / /                         ( )                   (_)     | |              "
+echo "| |/ /  __ _ ___ _ __   ___ _ __|/ ___   ___  ___ _ __ _ _ __ | |_             "
+echo "|    \ / _` / __| '_ \ / _ \ '__| / __| / __|/ __| '__| | '_ \| __|            "
+echo "| |\  \ (_| \__ \ |_) |  __/ |    \__ \ \__ \ (__| |  | | |_) | |_             "
+echo "\_| \_/\__,_|___/ .__/ \___|_|    |___/ |___/\___|_|  |_| .__/ \__|            "
+echo "                | |                                     | |                    "
+echo "                |_|                                     |_|                    "
+echo "  __                         _                        _           _            "
+echo " / _|                       | |                      | |         | |           "
+echo "| |_ ___  _ __    __ _ _   _| |_ ___  _ __ ___   __ _| |_ ___  __| |           "
+echo "|  _/ _ \| '__|  / _` | | | | __/ _ \| '_ ` _ \ / _` | __/ _ \/ _` |           "
+echo "| || (_) | |    | (_| | |_| | || (_) | | | | | | (_| | ||  __/ (_| |           "
+echo "|_| \___/|_|     \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__\___|\__,_|           "
+echo "                                                                               "
+echo "                                                                               "
+echo "          _                        __                                          "
+echo "         | |                      / _|                                         "
+echo " ___  ___| |_ _   _ _ __     ___ | |_    __ _ _ __                             "
+echo "/ __|/ _ \ __| | | | '_ \   / _ \|  _|  / _` | '_ \                            "
+echo "\__ \  __/ |_| |_| | |_) | | (_) | |   | (_| | | | |                           "
+echo "|___/\___|\__|\__,_| .__/   \___/|_|    \__,_|_| |_|                           "
+echo "                   | |                                                         "
+echo "                   |_|                                                         "
+echo "       _                 _                                _     _              "
+echo "      | |               | |                              | |   (_)             "
+echo " _   _| |__  _   _ _ __ | |_ _   _   _ __ ___   __ _  ___| |__  _ _ __   ___   "
+echo "| | | | '_ \| | | | '_ \| __| | | | | '_ ` _ \ / _` |/ __| '_ \| | '_ \ / _ \  "
+echo "| |_| | |_) | |_| | | | | |_| |_| | | | | | | | (_| | (__| | | | | | | |  __/_ "
+echo " \__,_|_.__/ \__,_|_| |_|\__|\__,_| |_| |_| |_|\__,_|\___|_| |_|_|_| |_|\___(_)"
+echo "                                                                               "
+echo "                                                                               "
+read -p "Please press any key for the initial manual variable entering part of this script. Press CTRL+C to cancel."
+
+
+clear
+
+echo " "
+echo " "
+echo "  ____       _                        __   ____ ____  _   _   _              "
+echo " / ___|  ___| |_ _   _ _ __     ___  / _| / ___/ ___|| | | | | | _____ _   _ "
+echo " \___ \ / _ \ __| | | | '_ \   / _ \| |_  \___ \___ \| |_| | | |/ / _ \ | | |"
+echo "  ___) |  __/ |_| |_| | |_) | | (_) |  _|  ___) |__) |  _  | |   <  __/ |_| |"
+echo " |____/ \___|\__|\__,_| .__/   \___/|_|   |____/____/|_| |_| |_|\_\___|\__, |"
+echo "                      |_|                                              |___/ "
+echo " "
+echo " "
+read -sp 'Enter the desired keyphrase to use with the admin key:	' varkeyphrase
+ssh-keygen -t rsa -b 4096 -C "admin key form Kaspers main computer" -P $varkeyphrase -f "/home/kasper/.ssh/id_rsa" -q 
+ssh-keygen -y -f "/home/kasper/.ssh/id_rsa"
+chmod 600 /home/kasper/.ssh/id_rsa
+chmod 644 /home/kasper/.ssh/id_rsa.pub
+read -p "Please insert the public key listed above into the ~/.ssh/authorized_keys file on the admin server, then press enter."
+
+clear
+echo " "
+echo " "
+echo "   ____                _   _                                   _          _ "
+echo "  / ___|_ __ ___  __ _| |_(_)_ __   __ _   _ __   ___  ___  __| | ___  __| |"
+echo " | |   | '__/ _ \/ _` | __| | '_ \ / _` | | '_ \ / _ \/ _ \/ _` |/ _ \/ _` |"
+echo " | |___| | |  __/ (_| | |_| | | | | (_| | | | | |  __/  __/ (_| |  __/ (_| |"
+echo "  \____|_|  \___|\__,_|\__|_|_| |_|\__, | |_| |_|\___|\___|\__,_|\___|\__,_|"
+echo "  / _| ___ | | __| | ___ _ __ ___  |___/                                    "
+echo " | |_ / _ \| |/ _` |/ _ \ '__/ __|                                          "
+echo " |  _| (_) | | (_| |  __/ |  \__ \                                          "
+echo " |_|  \___/|_|\__,_|\___|_|  |___/                                          "
+echo " "                                                                                                                                                                   
+echo " "
+
+mkdir /home/kasper/WORK
+mkdir /home/kasper/WORK/.credentials
+mkdir /home/kasper/WORK/HOME
+mkdir /home/kasper/WORK/HOME/Documents
+mkdir /home/kasper/WORK/HOME/Downloads
+mkdir /home/kasper/WORK/HOME/Desktop
+mkdir /home/kasper/WORK/SHARED
+mkdir /home/kasper/WORK/ISO
+
+ln -s /home/kasper/WORK/HOME/Documents /home/kasper/Documents
+ln -s /home/kasper/WORK/HOME/Downloads /home/kasper/Downloads
+ln -s /home/kasper/WORK/HOME/Desktop /home/kasper/Desktop
+
+clear
+
+echo " "
+echo " "
+echo "   ____              _            _   _       _        __            "
+echo "  / ___|_ __ ___  __| | ___ _ __ | |_(_) __ _| |___   / _| ___  _ __ "
+echo " | |   | '__/ _ \/ _` |/ _ \ '_ \| __| |/ _` | / __| | |_ / _ \| '__|"
+echo " | |___| | |  __/ (_| |  __/ | | | |_| | (_| | \__ \ |  _| (_) | |   "
+echo "  \____|_|  \___|\__,_|\___|_| |_|\__|_|\__,_|_|___/ |_|  \___/|_|   "
+echo " | |_| |__   ___   ___| |__   __ _ _ __ ___  ___                     "
+echo " | __| '_ \ / _ \ / __| '_ \ / _` | '__/ _ \/ __|                    "
+echo " | |_| | | |  __/ \__ \ | | | (_| | | |  __/\__ \                    "
+echo "  \__|_| |_|\___| |___/_| |_|\__,_|_|  \___||___/                    "
+echo "  "                                                                   
+echo " "
+echo Enter your credentials for the main enviroment
+echo These credentials are saved in an manor which only makes you and sudo users able to read it.
+read -p 'Username: ' varusername
+read -p 'Active Directory Domain: ' vardomain
+read -sp 'Password: ' varpassword
+
+file="/home/kasper/WORK/.credentials/.MAIN"
+echo "username=$varusername" > $file
+echo "password=$varpassword" >> $file
+echo "domain=$vardomain" >>> $file
+cat $file
+chmod 700 $file
+
+varusername=This_is_now_a_secret!
+vardomain=This_is_now_a_secret!
+varpassword=This_is_now_a_secret!
+
+echo Enter your credentials for the admin enviroment
+echo These credentials are saved in an manor which only makes you and sudo users able to read it.
+read -p 'Username: ' varusername
+read -p 'Active Directory Domain: ' vardomain
+read -sp 'Password: ' varpassword
+
+file="/home/kasper/WORK/.credentials/.ADMIN"
+echo "username=$varusername" > $file
+echo "password=$varpassword" >> $file
+echo "domain=$vardomain" >>> $file
+cat $file
+chmod 700 $file
+
+varusername=This_is_now_a_secret!
+vardomain=This_is_now_a_secret!
+varpassword=This_is_now_a_secret!
+
+clear
+echo " "
+echo " "
+echo "  _____       _            _                             _          "
+echo " | ____|_ __ | |_ ___ _ __(_)_ __   __ _   ___ _   _  __| | ___     "
+echo " |  _| | '_ \| __/ _ \ '__| | '_ \ / _` | / __| | | |/ _` |/ _ \    "
+echo " | |___| | | | ||  __/ |  | | | | | (_| | \__ \ |_| | (_| | (_) |   "
+echo " |_____|_| |_|\__\___|_|  |_|_| |_|\__, | |___/\__,_|\__,_|\___/    "
+echo "   __ _ _ __   __| |  _ __  _ __ __|___/_   __ _ _ __(_)_ __   __ _ "
+echo "  / _` | '_ \ / _` | | '_ \| '__/ _ \ '_ \ / _` | '__| | '_ \ / _` |"
+echo " | (_| | | | | (_| | | |_) | | |  __/ |_) | (_| | |  | | | | | (_| |"
+echo "  \__,_|_| |_|\__,_| | .__/|_| _\___| .__/_\__,_|_|  |_|_| |_|\__, |"
+echo "  / _| ___  _ __  (_)|_|_  ___| |_ _|_|| | |                  |___/ "
+echo " | |_ / _ \| '__| | | '_ \/ __| __/ _` | | |                        "
+echo " |  _| (_) | |    | | | | \__ \ || (_| | | |                        "
+echo " |_|  \___/|_|    |_|_| |_|___/\__\__,_|_|_|                        "
+echo " "
+echo " "
+                                                                    
 sudo su -
 
 mkdir ~/tempscript
@@ -7,6 +158,7 @@ mkdir ~/tempscript/packages/Teams
 mkdir ~/tempscript/packages/Openconnect
 mkdir ~/tempscript/packages/IcaClient
 mkdir ~/tempscript/packages/Chrome
+
 
 cd ~/tempscript/packages/Chrome
 wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Chrome210420/google-chrome-stable_current_amd64.deb
@@ -20,6 +172,21 @@ wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Teams/team
 cd ~/tempscript/packages/XkeePass
 wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/XkeePass/keepass2_2.44%2Bdfsg-1_all.deb
 
+clear
+echo " "
+echo " "
+echo "  ___           _        _ _ _               "
+echo " |_ _|_ __  ___| |_ __ _| | (_)_ __   __ _   "
+echo "  | || '_ \/ __| __/ _` | | | | '_ \ / _` |  "
+echo "  | || | | \__ \ || (_| | | | | | | | (_| |  "
+echo " |___|_| |_|___/\__\__,_|_|_|_|_| |_|\__, |  "
+echo "  _ __   __ _  ___| | ____ _  __ _  _|___/__ "
+echo " | '_ \ / _` |/ __| |/ / _` |/ _` |/ _ \/ __|"
+echo " | |_) | (_| | (__|   < (_| | (_| |  __/\__ \"
+echo " | .__/ \__,_|\___|_|\_\__,_|\__, |\___||___/"
+echo " |_|                         |___/           "
+echo " "
+echo " "
 cd ~/tempscript
 dpkg -i ~/tempscript/packages/XkeePass/keepass2_2.44+dfsg-1_all.deb
 apt-get install -f
@@ -32,3 +199,78 @@ apt-get install -f
 dpkg -i ~/tempscript/packages/Chrome/google-chrome-stable_current_amd64.deb
 apt-get install -f
 
+clear
+echo " "
+echo " "
+echo "   ____                _   _                               _  "
+echo "  / ___|_ __ ___  __ _| |_(_)_ __   __ _    __ _ _ __   __| | "
+echo " | |   | '__/ _ \/ _` | __| | '_ \ / _` |  / _` | '_ \ / _` | "
+echo " | |___| | |  __/ (_| | |_| | | | | (_| | | (_| | | | | (_| | "
+echo "  \____|_|  \___|\__,_|\__|_|_| |_|\__, |  \__,_|_| |_|\__,_| "
+echo "                                   |___/                      "
+echo "   __ _ _ __  _ __   ___ _ __   __| (_)_ __   __ _            "
+echo "  / _` | '_ \| '_ \ / _ \ '_ \ / _` | | '_ \ / _` |           "
+echo " | (_| | |_) | |_) |  __/ | | | (_| | | | | | (_| |           "
+echo "  \__,_| .__/| .__/ \___|_| |_|\__,_|_|_| |_|\__, |           "
+echo "  ___ _|_|_ _|_| |_ ___ _ __ ___    / _(_) | |___/___         "
+echo " / __| | | / __| __/ _ \ '_ ` _ \  | |_| | |/ _ \/ __|        "
+echo " \__ \ |_| \__ \ ||  __/ | | | | | |  _| | |  __/\__ \        "
+echo " |___/\__, |___/\__\___|_| |_| |_| |_| |_|_|\___||___/        "
+echo "      |___/                                                   "
+echo " "
+echo " "
+echo "\n#Dreper eksisterende tunneler, setter opp nye, umounter eksisterende og mounter på nytt. \nfunction socks() { \nfor i in `ps ax|grep "[s]sh -L 944"|awk '{ print $1 }'` \ndo \nkill -9 $i \ndone \nssh -L 9445:99xfs11001.99x.local:445 -D 9000 -f -C -q -N -p 7226 88.87.45.118 \nssh -L 9446:cmzfs001.cmz.local:445 -f -C -q -N -p 7226 88.87.45.118 \numount -l /home/kasper/WORK/HOME \numount -l /home/kasper/WORK/SHARED \numount -l /home/kasper/WORK/ISO \nmount /home/kasper/WORK/HOME \nmount /home/kasper/WORK/SHARED \nmount /home/kasper/WORK/ISO \n}" >> /home/kasper/.bashrc
+echo "\nfunction remount() { \numount -a -t cifs -l \nmount -a \n}" >> /root/.bashrc
+echo "\n#Venter 10 sekunder så nettverk er koblet til før tunneler settes opp. \nsleep 10 \nssh -L 9445:99xfs11001.99x.local:445 -D 9000 -f -C -q -N -p 7226 88.87.45.118 \nssh -L 9446:cmzfs001.cmz.local:445 -f -C -q -N -p 7226 88.87.45.118" >> /bin/bash/str
+echo "\n//99xfs11001.99x.local/Shared/ /home/kasper/WORK/SHARED cifs ip=127.0.0.1,port=9445,vers=3.0,credentials=/home/kasper/WORK/credentials/.MAIN,users 0 0 \n//99xfs11001.99x.local/home/kasper.hanssen /home/kasper/WORK/HOME cifs ip=127.0.0.1,port=9445,vers=3.0,credentials=/home/kasper/WORK/credentials/.MAIN,users 0 0 \n//99xfs11001.99x.local/home/kasper.hanssen/Downloads /home/kasper/WORK/HOME/Downloads cifs ip=127.0.0.1,port=9445,vers=3.0,credentials=/home/kasper/WORK/credentials/.MAIN,users 0 0 \n//99xfs11001.99x.local/home/kasper.hanssen/Desktop /home/kasper/WORK/HOME/Desktop cifs ip=127.0.0.1,port=9445,vers=3.0,credentials=/home/kasper/WORK/credentials/.MAIN,users 0 0 \n//99xfs11001.99x.local/home/kasper.hanssen/Documents /home/kasper/WORK/HOME/Documents cifs ip=127.0.0.1,port=9445,vers=3.0,credentials=/home/kasper/WORK/credentials/.MAIN,users 0 0 \n//cmzfs001.cmz.local/ISO /home/kasper/WORK/ISO cifs ip=127.0.0.1,port=9446,vers=3.0,credentials=/home/kasper/WORK/credentials/.ADMIN,users 0 0" >> /etc/fstab
+chmod +x /bin/bash/str
+chmod 755 /bin/bash/str
+cp ~/tempscript/packages/Openconnect/vpn /bin/bash
+chmod +x /bin/bash/vpn
+chmod 755 /bin/bash/vpn
+
+clear
+echo " "
+echo " "
+echo "  _   _           _       _   _               _   _                         "
+echo " | | | |_ __   __| | __ _| |_(_)_ __   __ _  | |_| |__   ___                "
+echo " | | | | '_ \ / _` |/ _` | __| | '_ \ / _` | | __| '_ \ / _ \               "
+echo " | |_| | |_) | (_| | (_| | |_| | | | | (_| | | |_| | | |  __/               "
+echo "  \___/| .__/ \__,_|\__,_|\__|_|_| |_|\__, |  \__|_| |_|\___|               "
+echo "  ___ _|_|_ ___| |_ ___ _ __ ___       |___/                                "
+echo " / __| | | / __| __/ _ \ '_ ` _ \                                           "
+echo " \__ \ |_| \__ \ ||  __/ | | | | \                                          "
+echo " |___/\__, |___/\__\___|_| |_| |_|                 _ _     _                "
+echo "  _ __|___/_ __   ___  ___(_) |_ ___  _ __ _   _  | (_)___| |_              "
+echo " | '__/ _ \ '_ \ / _ \/ __| | __/ _ \| '__| | | | | | / __| __|             "
+echo " | | |  __/ |_) | (_) \__ \ | || (_) | |  | |_| | | | \__ \ |_              "
+echo " |_|  \___| .__/ \___/|___/_|\__\___/|_|_ _\__, | |_|_|___/\__|             "
+echo "   __ _ _ |_|  __| |   __ _ _ __  _ __ | (_)___/ __ _| |_(_) ___  _ __  ___ "
+echo "  / _` | '_ \ / _` |  / _` | '_ \| '_ \| | |/ __/ _` | __| |/ _ \| '_ \/ __|"
+echo " | (_| | | | | (_| | | (_| | |_) | |_) | | | (_| (_| | |_| | (_) | | | \__ \"
+echo "  \__,_|_| |_|\__,_|  \__,_| .__/| .__/|_|_|\___\__,_|\__|_|\___/|_| |_|___/"
+echo "                           |_|   |_|                                        "
+echo " "
+echo " "
+apt-get update
+apt-get upgrade -y
+
+clear
+echo " "
+echo " "
+echo "  _____ _                          _       _     _           _                  "
+echo " |_   _| |__   ___   ___  ___ _ __(_)_ __ | |_  (_)___    __| | ___  _ __   ___ "
+echo "   | | | '_ \ / _ \ / __|/ __| '__| | '_ \| __| | / __|  / _` |/ _ \| '_ \ / _ \"
+echo "   | | | | | |  __/ \__ \ (__| |  | | |_) | |_  | \__ \ | (_| | (_) | | | |  __/"
+echo "   |_| |_| |_|\___| |___/\___|_|  |_| .__/ \__| |_|___/  \__,_|\___/|_| |_|\___|"
+echo "                                    |_|                                         "
+echo " "
+echo " "
+echo " The script is now removing all temproary files. Please wait."
+rm -rf ~/tempscript
+echo " "
+echo " "
+echo " "
+echo "The system needs a reboot. It will reboot in 10 minutes."
+sleep 10m
+reboot now
