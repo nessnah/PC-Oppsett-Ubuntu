@@ -158,6 +158,7 @@ mkdir ~/tempscript/packages/Teams
 mkdir ~/tempscript/packages/Openconnect
 mkdir ~/tempscript/packages/IcaClient
 mkdir ~/tempscript/packages/Chrome
+mkdir ~/tempscript/packages/DisplayLink-driver
 
 
 cd ~/tempscript/packages/Chrome
@@ -171,6 +172,9 @@ cd ~/tempscript/packages/Teams
 wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Teams/teams_1.3.00.5153_amd64%20(2).deb
 cd ~/tempscript/packages/XkeePass
 wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/XkeePass/keepass2_2.44%2Bdfsg-1_all.deb
+cd ~/tempscript/packages/DisplayLink-driver
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/blob/master/Packages/DisplayLink%20driver/displaylink-driver-5.2.14.run
+chmod +x ~/tempscript/packages/DisplayLink-driver/displaylink-driver-5.2.14.run
 
 clear
 echo " "
@@ -188,6 +192,7 @@ echo " |_|                         |___/           "
 echo " "
 echo " "
 cd ~/tempscript
+.~/tempscript/packages/DisplayLink-driver/displaylink-driver-5.2.14.run
 dpkg -i ~/tempscript/packages/XkeePass/keepass2_2.44+dfsg-1_all.deb
 apt-get install -f
 dpkg -i "~/tempscript/packages/Teams/teams_1.3.00.5153_amd64 (2).deb"
