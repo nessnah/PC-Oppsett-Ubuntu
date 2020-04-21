@@ -103,6 +103,7 @@ read -p 'Active Directory Domain: ' vardomain
 read -sp 'Password: ' varpassword
 
 file="/home/kasper/WORK/.credentials/.MAIN"
+touch $file
 echo "username=$varusername" > $file
 echo "password=$varpassword" >> $file
 echo "domain=$vardomain" >>> $file
@@ -120,6 +121,7 @@ read -p 'Active Directory Domain: ' vardomain
 read -sp 'Password: ' varpassword
 
 file="/home/kasper/WORK/.credentials/.ADMIN"
+touch $file
 echo "username=$varusername" > $file
 echo "password=$varpassword" >> $file
 echo "domain=$vardomain" >>> $file
