@@ -1,0 +1,34 @@
+sudo su -
+
+mkdir ~/tempscript
+mkdir ~/tempscript/packages/
+mkdir ~/tempscript/packages/XkeePass
+mkdir ~/tempscript/packages/Teams
+mkdir ~/tempscript/packages/Openconnect
+mkdir ~/tempscript/packages/IcaClient
+mkdir ~/tempscript/packages/Chrome
+
+cd ~/tempscript/packages/Chrome
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Chrome210420/google-chrome-stable_current_amd64.deb
+cd ~/tempscript/packages/IcaClient
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/IcaClient/icaclient_20.04.0.21_amd64.deb
+cd ~/tempscript/packages/Openconnect
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Openconnect/openconnect_8.05-1_amd64.deb
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Openconnect/vpn
+cd ~/tempscript/packages/Teams
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/Teams/teams_1.3.00.5153_amd64%20(2).deb
+cd ~/tempscript/packages/XkeePass
+wget https://github.com/nessnah/PC-Oppsett-Ubuntu/raw/master/Packages/XkeePass/keepass2_2.44%2Bdfsg-1_all.deb
+
+cd ~/tempscript
+dpkg -i ~/tempscript/packages/XkeePass/keepass2_2.44+dfsg-1_all.deb
+apt-get install -f
+dpkg -i "~/tempscript/packages/Teams/teams_1.3.00.5153_amd64 (2).deb"
+apt-get install -f
+dpkg -i ~/tempscript/packages/Openconnect/openconnect_8.05-1_amd64.deb
+apt-get install -f
+dpkg -i ~/tempscript/packages/IcaClient/icaclient_20.04.0.21_amd64.deb
+apt-get install -f
+dpkg -i ~/tempscript/packages/Chrome/google-chrome-stable_current_amd64.deb
+apt-get install -f
+
